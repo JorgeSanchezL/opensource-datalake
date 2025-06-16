@@ -1,0 +1,330 @@
+apiVersion: v1
+data:
+  template.xml: "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<template
+    encoding-version=\"1.3\">\n    <description></description>\n    <groupId>79f878d2-0197-1000-08bf-8a0e45164bd6</groupId>\n
+    \   <name>nifi</name>\n    <snippet>\n        <connections>\n            <id>3be56406-ac56-3b68-0000-000000000000</id>\n
+    \           <parentGroupId>67587b51-d6f5-3ff7-0000-000000000000</parentGroupId>\n
+    \           <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>\n
+    \           <backPressureObjectThreshold>10000</backPressureObjectThreshold>\n
+    \           <destination>\n                <groupId>67587b51-d6f5-3ff7-0000-000000000000</groupId>\n
+    \               <id>11d729c4-d21d-33cf-0000-000000000000</id>\n                <type>PROCESSOR</type>\n
+    \           </destination>\n            <flowFileExpiration>0 sec</flowFileExpiration>\n
+    \           <labelIndex>1</labelIndex>\n            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>\n
+    \           <loadBalancePartitionAttribute></loadBalancePartitionAttribute>\n
+    \           <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>\n
+    \           <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>\n            <name></name>\n
+    \           <selectedRelationships>success</selectedRelationships>\n            <source>\n
+    \               <groupId>67587b51-d6f5-3ff7-0000-000000000000</groupId>\n                <id>82d91f12-91a6-3f6a-0000-000000000000</id>\n
+    \               <type>PROCESSOR</type>\n            </source>\n            <zIndex>0</zIndex>\n
+    \       </connections>\n        <processors>\n            <id>11d729c4-d21d-33cf-0000-000000000000</id>\n
+    \           <parentGroupId>67587b51-d6f5-3ff7-0000-000000000000</parentGroupId>\n
+    \           <position>\n                <x>696.0</x>\n                <y>16.0</y>\n
+    \           </position>\n            <bundle>\n                <artifact>nifi-aws-nar</artifact>\n
+    \               <group>org.apache.nifi</group>\n                <version>1.19.1</version>\n
+    \           </bundle>\n            <config>\n                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>\n
+    \               <bulletinLevel>WARN</bulletinLevel>\n                <comments></comments>\n
+    \               <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>\n
+    \               <descriptors>\n                    <entry>\n                        <key>Object
+    Key</key>\n                        <value>\n                            <name>Object
+    Key</name>\n                        </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>Bucket</key>\n                        <value>\n                            <name>Bucket</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>Content Type</key>\n                        <value>\n
+    \                           <name>Content Type</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Content
+    Disposition</key>\n                        <value>\n                            <name>Content
+    Disposition</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Cache Control</key>\n
+    \                       <value>\n                            <name>Cache Control</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>Access Key</key>\n                        <value>\n
+    \                           <name>Access Key</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Secret
+    Key</key>\n                        <value>\n                            <name>Secret
+    Key</name>\n                        </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>Credentials File</key>\n                        <value>\n
+    \                           <name>Credentials File</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>AWS
+    Credentials Provider service</key>\n                        <value>\n                            <identifiesControllerService>org.apache.nifi.processors.aws.credentials.provider.service.AWSCredentialsProviderService</identifiesControllerService>\n
+    \                           <name>AWS Credentials Provider service</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>s3-object-tags-prefix</key>\n
+    \                       <value>\n                            <name>s3-object-tags-prefix</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>s3-object-remove-tags-prefix</key>\n                        <value>\n
+    \                           <name>s3-object-remove-tags-prefix</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Storage
+    Class</key>\n                        <value>\n                            <name>Storage
+    Class</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Region</key>\n                        <value>\n
+    \                           <name>Region</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Communications
+    Timeout</key>\n                        <value>\n                            <name>Communications
+    Timeout</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Expiration Time Rule</key>\n
+    \                       <value>\n                            <name>Expiration
+    Time Rule</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>FullControl User List</key>\n
+    \                       <value>\n                            <name>FullControl
+    User List</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Read Permission User
+    List</key>\n                        <value>\n                            <name>Read
+    Permission User List</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Write Permission User
+    List</key>\n                        <value>\n                            <name>Write
+    Permission User List</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Read ACL User List</key>\n
+    \                       <value>\n                            <name>Read ACL User
+    List</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Write ACL User List</key>\n
+    \                       <value>\n                            <name>Write ACL User
+    List</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Owner</key>\n                        <value>\n
+    \                           <name>Owner</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>canned-acl</key>\n
+    \                       <value>\n                            <name>canned-acl</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>SSL Context Service</key>\n                        <value>\n
+    \                           <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>\n
+    \                           <name>SSL Context Service</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Endpoint
+    Override URL</key>\n                        <value>\n                            <name>Endpoint
+    Override URL</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Signer Override</key>\n
+    \                       <value>\n                            <name>Signer Override</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>Multipart Threshold</key>\n                        <value>\n
+    \                           <name>Multipart Threshold</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Multipart
+    Part Size</key>\n                        <value>\n                            <name>Multipart
+    Part Size</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Multipart Upload AgeOff
+    Interval</key>\n                        <value>\n                            <name>Multipart
+    Upload AgeOff Interval</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Multipart Upload Max
+    Age Threshold</key>\n                        <value>\n                            <name>Multipart
+    Upload Max Age Threshold</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>s3-temporary-directory-multipart</key>\n
+    \                       <value>\n                            <name>s3-temporary-directory-multipart</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>server-side-encryption</key>\n                        <value>\n
+    \                           <name>server-side-encryption</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>encryption-service</key>\n
+    \                       <value>\n                            <identifiesControllerService>org.apache.nifi.processors.aws.s3.AmazonS3EncryptionService</identifiesControllerService>\n
+    \                           <name>encryption-service</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>use-chunked-encoding</key>\n
+    \                       <value>\n                            <name>use-chunked-encoding</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>use-path-style-access</key>\n                        <value>\n
+    \                           <name>use-path-style-access</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>proxy-configuration-service</key>\n
+    \                       <value>\n                            <identifiesControllerService>org.apache.nifi.proxy.ProxyConfigurationService</identifiesControllerService>\n
+    \                           <name>proxy-configuration-service</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Proxy
+    Host</key>\n                        <value>\n                            <name>Proxy
+    Host</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Proxy Host Port</key>\n
+    \                       <value>\n                            <name>Proxy Host
+    Port</name>\n                        </value>\n                    </entry>\n
+    \                   <entry>\n                        <key>proxy-user-name</key>\n
+    \                       <value>\n                            <name>proxy-user-name</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>proxy-user-password</key>\n                        <value>\n
+    \                           <name>proxy-user-password</name>\n                        </value>\n
+    \                   </entry>\n                </descriptors>\n                <executionNode>ALL</executionNode>\n
+    \               <lossTolerant>false</lossTolerant>\n                <maxBackoffPeriod>10
+    mins</maxBackoffPeriod>\n                <penaltyDuration>30 sec</penaltyDuration>\n
+    \               <properties>\n                    <entry>\n                        <key>Object
+    Key</key>\n                        <value>\tdata-${now():format('yyyyMMddHHmmss')}.json</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Bucket</key>\n
+    \                       <value>datalake</value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Content Type</key>\n
+    \                       <value>application/json</value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Content Disposition</key>\n
+    \                   </entry>\n                    <entry>\n                        <key>Cache
+    Control</key>\n                    </entry>\n                    <entry>\n                        <key>Access
+    Key</key>\n                    </entry>\n                    <entry>\n                        <key>Secret
+    Key</key>\n                    </entry>\n                    <entry>\n                        <key>Credentials
+    File</key>\n                        <value>/opt/nifi/credentials/credentials</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>AWS
+    Credentials Provider service</key>\n                    </entry>\n                    <entry>\n
+    \                       <key>s3-object-tags-prefix</key>\n                    </entry>\n
+    \                   <entry>\n                        <key>s3-object-remove-tags-prefix</key>\n
+    \                       <value>false</value>\n                    </entry>\n                    <entry>\n
+    \                       <key>Storage Class</key>\n                        <value>Standard</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Region</key>\n
+    \                       <value>eu-west-3</value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Communications Timeout</key>\n
+    \                       <value>30 secs</value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Expiration Time Rule</key>\n
+    \                   </entry>\n                    <entry>\n                        <key>FullControl
+    User List</key>\n                        <value>${s3.permissions.full.users}</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Read
+    Permission User List</key>\n                        <value>${s3.permissions.read.users}</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Write
+    Permission User List</key>\n                        <value>${s3.permissions.write.users}</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Read
+    ACL User List</key>\n                        <value>${s3.permissions.readacl.users}</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Write
+    ACL User List</key>\n                        <value>${s3.permissions.writeacl.users}</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Owner</key>\n
+    \                       <value>${s3.owner}</value>\n                    </entry>\n
+    \                   <entry>\n                        <key>canned-acl</key>\n                        <value>${s3.permissions.cannedacl}</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>SSL
+    Context Service</key>\n                    </entry>\n                    <entry>\n
+    \                       <key>Endpoint Override URL</key>\n                        <value>http://minio:9000</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Signer
+    Override</key>\n                        <value>Default Signature</value>\n                    </entry>\n
+    \                   <entry>\n                        <key>Multipart Threshold</key>\n
+    \                       <value>5 GB</value>\n                    </entry>\n                    <entry>\n
+    \                       <key>Multipart Part Size</key>\n                        <value>5
+    GB</value>\n                    </entry>\n                    <entry>\n                        <key>Multipart
+    Upload AgeOff Interval</key>\n                        <value>60 min</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Multipart
+    Upload Max Age Threshold</key>\n                        <value>7 days</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>s3-temporary-directory-multipart</key>\n
+    \                       <value>${java.io.tmpdir}</value>\n                    </entry>\n
+    \                   <entry>\n                        <key>server-side-encryption</key>\n
+    \                       <value>None</value>\n                    </entry>\n                    <entry>\n
+    \                       <key>encryption-service</key>\n                    </entry>\n
+    \                   <entry>\n                        <key>use-chunked-encoding</key>\n
+    \                       <value>true</value>\n                    </entry>\n                    <entry>\n
+    \                       <key>use-path-style-access</key>\n                        <value>false</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>proxy-configuration-service</key>\n
+    \                   </entry>\n                    <entry>\n                        <key>Proxy
+    Host</key>\n                    </entry>\n                    <entry>\n                        <key>Proxy
+    Host Port</key>\n                    </entry>\n                    <entry>\n                        <key>proxy-user-name</key>\n
+    \                   </entry>\n                    <entry>\n                        <key>proxy-user-password</key>\n
+    \                   </entry>\n                </properties>\n                <retryCount>10</retryCount>\n
+    \               <runDurationMillis>0</runDurationMillis>\n                <schedulingPeriod>0
+    sec</schedulingPeriod>\n                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>\n
+    \               <yieldDuration>1 sec</yieldDuration>\n            </config>\n
+    \           <executionNodeRestricted>false</executionNodeRestricted>\n            <name>PutS3Object</name>\n
+    \           <relationships>\n                <autoTerminate>true</autoTerminate>\n
+    \               <name>failure</name>\n                <retry>false</retry>\n            </relationships>\n
+    \           <relationships>\n                <autoTerminate>true</autoTerminate>\n
+    \               <name>success</name>\n                <retry>false</retry>\n            </relationships>\n
+    \           <state>RUNNING</state>\n            <style/>\n            <type>org.apache.nifi.processors.aws.s3.PutS3Object</type>\n
+    \       </processors>\n        <processors>\n            <id>82d91f12-91a6-3f6a-0000-000000000000</id>\n
+    \           <parentGroupId>67587b51-d6f5-3ff7-0000-000000000000</parentGroupId>\n
+    \           <position>\n                <x>0.0</x>\n                <y>0.0</y>\n
+    \           </position>\n            <bundle>\n                <artifact>nifi-kafka-2-0-nar</artifact>\n
+    \               <group>org.apache.nifi</group>\n                <version>1.19.1</version>\n
+    \           </bundle>\n            <config>\n                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>\n
+    \               <bulletinLevel>WARN</bulletinLevel>\n                <comments></comments>\n
+    \               <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>\n
+    \               <descriptors>\n                    <entry>\n                        <key>bootstrap.servers</key>\n
+    \                       <value>\n                            <name>bootstrap.servers</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>security.protocol</key>\n                        <value>\n
+    \                           <name>security.protocol</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>sasl.mechanism</key>\n
+    \                       <value>\n                            <name>sasl.mechanism</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>sasl.kerberos.service.name</key>\n                        <value>\n
+    \                           <name>sasl.kerberos.service.name</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>kerberos-credentials-service</key>\n
+    \                       <value>\n                            <identifiesControllerService>org.apache.nifi.kerberos.KerberosCredentialsService</identifiesControllerService>\n
+    \                           <name>kerberos-credentials-service</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>sasl.kerberos.principal</key>\n
+    \                       <value>\n                            <name>sasl.kerberos.principal</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>sasl.kerberos.keytab</key>\n                        <value>\n
+    \                           <name>sasl.kerberos.keytab</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>sasl.username</key>\n
+    \                       <value>\n                            <dependencies>\n<dependentValues>PLAIN</dependentValues>\n<dependentValues>SCRAM-SHA-512</dependentValues>\n<dependentValues>SCRAM-SHA-256</dependentValues>\n<propertyName>sasl.mechanism</propertyName>\n
+    \                           </dependencies>\n                            <name>sasl.username</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>sasl.password</key>\n                        <value>\n
+    \                           <dependencies>\n<dependentValues>PLAIN</dependentValues>\n<dependentValues>SCRAM-SHA-512</dependentValues>\n<dependentValues>SCRAM-SHA-256</dependentValues>\n<propertyName>sasl.mechanism</propertyName>\n
+    \                           </dependencies>\n                            <name>sasl.password</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>sasl.token.auth</key>\n                        <value>\n
+    \                           <dependencies>\n<dependentValues>SCRAM-SHA-512</dependentValues>\n<dependentValues>SCRAM-SHA-256</dependentValues>\n<propertyName>sasl.mechanism</propertyName>\n
+    \                           </dependencies>\n                            <name>sasl.token.auth</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>ssl.context.service</key>\n                        <value>\n
+    \                           <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>\n
+    \                           <name>ssl.context.service</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>topic</key>\n
+    \                       <value>\n                            <name>topic</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>topic_type</key>\n                        <value>\n
+    \                           <name>topic_type</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>honor-transactions</key>\n
+    \                       <value>\n                            <name>honor-transactions</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>group.id</key>\n                        <value>\n
+    \                           <name>group.id</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>auto.offset.reset</key>\n
+    \                       <value>\n                            <name>auto.offset.reset</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>key-attribute-encoding</key>\n                        <value>\n
+    \                           <name>key-attribute-encoding</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>message-demarcator</key>\n
+    \                       <value>\n                            <name>message-demarcator</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>separate-by-key</key>\n                        <value>\n
+    \                           <name>separate-by-key</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>message-header-encoding</key>\n
+    \                       <value>\n                            <name>message-header-encoding</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>header-name-regex</key>\n                        <value>\n
+    \                           <name>header-name-regex</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>max.poll.records</key>\n
+    \                       <value>\n                            <name>max.poll.records</name>\n
+    \                       </value>\n                    </entry>\n                    <entry>\n
+    \                       <key>max-uncommit-offset-wait</key>\n                        <value>\n
+    \                           <name>max-uncommit-offset-wait</name>\n                        </value>\n
+    \                   </entry>\n                    <entry>\n                        <key>Communications
+    Timeout</key>\n                        <value>\n                            <name>Communications
+    Timeout</name>\n                        </value>\n                    </entry>\n
+    \               </descriptors>\n                <executionNode>ALL</executionNode>\n
+    \               <lossTolerant>false</lossTolerant>\n                <maxBackoffPeriod>10
+    mins</maxBackoffPeriod>\n                <penaltyDuration>30 sec</penaltyDuration>\n
+    \               <properties>\n                    <entry>\n                        <key>bootstrap.servers</key>\n
+    \                       <value>kafka:9092</value>\n                    </entry>\n
+    \                   <entry>\n                        <key>security.protocol</key>\n
+    \                       <value>PLAINTEXT</value>\n                    </entry>\n
+    \                   <entry>\n                        <key>sasl.mechanism</key>\n
+    \                       <value>GSSAPI</value>\n                    </entry>\n
+    \                   <entry>\n                        <key>sasl.kerberos.service.name</key>\n
+    \                   </entry>\n                    <entry>\n                        <key>kerberos-credentials-service</key>\n
+    \                   </entry>\n                    <entry>\n                        <key>sasl.kerberos.principal</key>\n
+    \                   </entry>\n                    <entry>\n                        <key>sasl.kerberos.keytab</key>\n
+    \                   </entry>\n                    <entry>\n                        <key>sasl.username</key>\n
+    \                   </entry>\n                    <entry>\n                        <key>sasl.password</key>\n
+    \                   </entry>\n                    <entry>\n                        <key>sasl.token.auth</key>\n
+    \                       <value>false</value>\n                    </entry>\n                    <entry>\n
+    \                       <key>ssl.context.service</key>\n                    </entry>\n
+    \                   <entry>\n                        <key>topic</key>\n                        <value>raw-data</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>topic_type</key>\n
+    \                       <value>names</value>\n                    </entry>\n                    <entry>\n
+    \                       <key>honor-transactions</key>\n                        <value>true</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>group.id</key>\n
+    \                       <value>nifi-consumer-group</value>\n                    </entry>\n
+    \                   <entry>\n                        <key>auto.offset.reset</key>\n
+    \                       <value>latest</value>\n                    </entry>\n
+    \                   <entry>\n                        <key>key-attribute-encoding</key>\n
+    \                       <value>utf-8</value>\n                    </entry>\n                    <entry>\n
+    \                       <key>message-demarcator</key>\n                    </entry>\n
+    \                   <entry>\n                        <key>separate-by-key</key>\n
+    \                       <value>false</value>\n                    </entry>\n                    <entry>\n
+    \                       <key>message-header-encoding</key>\n                        <value>UTF-8</value>\n
+    \                   </entry>\n                    <entry>\n                        <key>header-name-regex</key>\n
+    \                   </entry>\n                    <entry>\n                        <key>max.poll.records</key>\n
+    \                       <value>10000</value>\n                    </entry>\n                    <entry>\n
+    \                       <key>max-uncommit-offset-wait</key>\n                        <value>1
+    secs</value>\n                    </entry>\n                    <entry>\n                        <key>Communications
+    Timeout</key>\n                        <value>60 secs</value>\n                    </entry>\n
+    \               </properties>\n                <retryCount>10</retryCount>\n                <runDurationMillis>0</runDurationMillis>\n
+    \               <schedulingPeriod>0 sec</schedulingPeriod>\n                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>\n
+    \               <yieldDuration>1 sec</yieldDuration>\n            </config>\n
+    \           <executionNodeRestricted>false</executionNodeRestricted>\n            <name>ConsumeKafka_2_0</name>\n
+    \           <relationships>\n                <autoTerminate>false</autoTerminate>\n
+    \               <name>success</name>\n                <retry>false</retry>\n            </relationships>\n
+    \           <state>RUNNING</state>\n            <style/>\n            <type>org.apache.nifi.processors.kafka.pubsub.ConsumeKafka_2_0</type>\n
+    \       </processors>\n    </snippet>\n    <timestamp>06/16/2025 18:40:42 UTC</timestamp>\n</template>\n"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: nifi-template

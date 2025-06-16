@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.3">
+    <description></description>
+    <groupId>79f878d2-0197-1000-08bf-8a0e45164bd6</groupId>
+    <name>nifi</name>
+    <snippet>
+        <connections>
+            <id>3be56406-ac56-3b68-0000-000000000000</id>
+            <parentGroupId>67587b51-d6f5-3ff7-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>67587b51-d6f5-3ff7-0000-000000000000</groupId>
+                <id>11d729c4-d21d-33cf-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>67587b51-d6f5-3ff7-0000-000000000000</groupId>
+                <id>82d91f12-91a6-3f6a-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <processors>
+            <id>11d729c4-d21d-33cf-0000-000000000000</id>
+            <parentGroupId>67587b51-d6f5-3ff7-0000-000000000000</parentGroupId>
+            <position>
+                <x>696.0</x>
+                <y>16.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-aws-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.19.1</version>
+            </bundle>
+            <config>
+                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Object Key</key>
+                        <value>
+                            <name>Object Key</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Bucket</key>
+                        <value>
+                            <name>Bucket</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Content Type</key>
+                        <value>
+                            <name>Content Type</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Content Disposition</key>
+                        <value>
+                            <name>Content Disposition</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Cache Control</key>
+                        <value>
+                            <name>Cache Control</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Access Key</key>
+                        <value>
+                            <name>Access Key</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Secret Key</key>
+                        <value>
+                            <name>Secret Key</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Credentials File</key>
+                        <value>
+                            <name>Credentials File</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>AWS Credentials Provider service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.processors.aws.credentials.provider.service.AWSCredentialsProviderService</identifiesControllerService>
+                            <name>AWS Credentials Provider service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>s3-object-tags-prefix</key>
+                        <value>
+                            <name>s3-object-tags-prefix</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>s3-object-remove-tags-prefix</key>
+                        <value>
+                            <name>s3-object-remove-tags-prefix</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Storage Class</key>
+                        <value>
+                            <name>Storage Class</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Region</key>
+                        <value>
+                            <name>Region</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Communications Timeout</key>
+                        <value>
+                            <name>Communications Timeout</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Expiration Time Rule</key>
+                        <value>
+                            <name>Expiration Time Rule</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>FullControl User List</key>
+                        <value>
+                            <name>FullControl User List</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Read Permission User List</key>
+                        <value>
+                            <name>Read Permission User List</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Write Permission User List</key>
+                        <value>
+                            <name>Write Permission User List</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Read ACL User List</key>
+                        <value>
+                            <name>Read ACL User List</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Write ACL User List</key>
+                        <value>
+                            <name>Write ACL User List</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Owner</key>
+                        <value>
+                            <name>Owner</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>canned-acl</key>
+                        <value>
+                            <name>canned-acl</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>SSL Context Service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+                            <name>SSL Context Service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Endpoint Override URL</key>
+                        <value>
+                            <name>Endpoint Override URL</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Signer Override</key>
+                        <value>
+                            <name>Signer Override</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Multipart Threshold</key>
+                        <value>
+                            <name>Multipart Threshold</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Multipart Part Size</key>
+                        <value>
+                            <name>Multipart Part Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Multipart Upload AgeOff Interval</key>
+                        <value>
+                            <name>Multipart Upload AgeOff Interval</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Multipart Upload Max Age Threshold</key>
+                        <value>
+                            <name>Multipart Upload Max Age Threshold</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>s3-temporary-directory-multipart</key>
+                        <value>
+                            <name>s3-temporary-directory-multipart</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>server-side-encryption</key>
+                        <value>
+                            <name>server-side-encryption</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>encryption-service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.processors.aws.s3.AmazonS3EncryptionService</identifiesControllerService>
+                            <name>encryption-service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>use-chunked-encoding</key>
+                        <value>
+                            <name>use-chunked-encoding</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>use-path-style-access</key>
+                        <value>
+                            <name>use-path-style-access</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>proxy-configuration-service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.proxy.ProxyConfigurationService</identifiesControllerService>
+                            <name>proxy-configuration-service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Proxy Host</key>
+                        <value>
+                            <name>Proxy Host</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Proxy Host Port</key>
+                        <value>
+                            <name>Proxy Host Port</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>proxy-user-name</key>
+                        <value>
+                            <name>proxy-user-name</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>proxy-user-password</key>
+                        <value>
+                            <name>proxy-user-password</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Object Key</key>
+                        <value>	data-${now():format('yyyyMMddHHmmss')}.json</value>
+                    </entry>
+                    <entry>
+                        <key>Bucket</key>
+                        <value>datalake</value>
+                    </entry>
+                    <entry>
+                        <key>Content Type</key>
+                        <value>application/json</value>
+                    </entry>
+                    <entry>
+                        <key>Content Disposition</key>
+                    </entry>
+                    <entry>
+                        <key>Cache Control</key>
+                    </entry>
+                    <entry>
+                        <key>Access Key</key>
+                    </entry>
+                    <entry>
+                        <key>Secret Key</key>
+                    </entry>
+                    <entry>
+                        <key>Credentials File</key>
+                        <value>/opt/nifi/credentials/credentials</value>
+                    </entry>
+                    <entry>
+                        <key>AWS Credentials Provider service</key>
+                    </entry>
+                    <entry>
+                        <key>s3-object-tags-prefix</key>
+                    </entry>
+                    <entry>
+                        <key>s3-object-remove-tags-prefix</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>Storage Class</key>
+                        <value>Standard</value>
+                    </entry>
+                    <entry>
+                        <key>Region</key>
+                        <value>eu-west-3</value>
+                    </entry>
+                    <entry>
+                        <key>Communications Timeout</key>
+                        <value>30 secs</value>
+                    </entry>
+                    <entry>
+                        <key>Expiration Time Rule</key>
+                    </entry>
+                    <entry>
+                        <key>FullControl User List</key>
+                        <value>${s3.permissions.full.users}</value>
+                    </entry>
+                    <entry>
+                        <key>Read Permission User List</key>
+                        <value>${s3.permissions.read.users}</value>
+                    </entry>
+                    <entry>
+                        <key>Write Permission User List</key>
+                        <value>${s3.permissions.write.users}</value>
+                    </entry>
+                    <entry>
+                        <key>Read ACL User List</key>
+                        <value>${s3.permissions.readacl.users}</value>
+                    </entry>
+                    <entry>
+                        <key>Write ACL User List</key>
+                        <value>${s3.permissions.writeacl.users}</value>
+                    </entry>
+                    <entry>
+                        <key>Owner</key>
+                        <value>${s3.owner}</value>
+                    </entry>
+                    <entry>
+                        <key>canned-acl</key>
+                        <value>${s3.permissions.cannedacl}</value>
+                    </entry>
+                    <entry>
+                        <key>SSL Context Service</key>
+                    </entry>
+                    <entry>
+                        <key>Endpoint Override URL</key>
+                        <value>http://minio:9000</value>
+                    </entry>
+                    <entry>
+                        <key>Signer Override</key>
+                        <value>Default Signature</value>
+                    </entry>
+                    <entry>
+                        <key>Multipart Threshold</key>
+                        <value>5 GB</value>
+                    </entry>
+                    <entry>
+                        <key>Multipart Part Size</key>
+                        <value>5 GB</value>
+                    </entry>
+                    <entry>
+                        <key>Multipart Upload AgeOff Interval</key>
+                        <value>60 min</value>
+                    </entry>
+                    <entry>
+                        <key>Multipart Upload Max Age Threshold</key>
+                        <value>7 days</value>
+                    </entry>
+                    <entry>
+                        <key>s3-temporary-directory-multipart</key>
+                        <value>${java.io.tmpdir}</value>
+                    </entry>
+                    <entry>
+                        <key>server-side-encryption</key>
+                        <value>None</value>
+                    </entry>
+                    <entry>
+                        <key>encryption-service</key>
+                    </entry>
+                    <entry>
+                        <key>use-chunked-encoding</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>use-path-style-access</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>proxy-configuration-service</key>
+                    </entry>
+                    <entry>
+                        <key>Proxy Host</key>
+                    </entry>
+                    <entry>
+                        <key>Proxy Host Port</key>
+                    </entry>
+                    <entry>
+                        <key>proxy-user-name</key>
+                    </entry>
+                    <entry>
+                        <key>proxy-user-password</key>
+                    </entry>
+                </properties>
+                <retryCount>10</retryCount>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>PutS3Object</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>failure</name>
+                <retry>false</retry>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>success</name>
+                <retry>false</retry>
+            </relationships>
+            <state>RUNNING</state>
+            <style/>
+            <type>org.apache.nifi.processors.aws.s3.PutS3Object</type>
+        </processors>
+        <processors>
+            <id>82d91f12-91a6-3f6a-0000-000000000000</id>
+            <parentGroupId>67587b51-d6f5-3ff7-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>0.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-kafka-2-0-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.19.1</version>
+            </bundle>
+            <config>
+                <backoffMechanism>PENALIZE_FLOWFILE</backoffMechanism>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>bootstrap.servers</key>
+                        <value>
+                            <name>bootstrap.servers</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>security.protocol</key>
+                        <value>
+                            <name>security.protocol</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.mechanism</key>
+                        <value>
+                            <name>sasl.mechanism</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.service.name</key>
+                        <value>
+                            <name>sasl.kerberos.service.name</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>kerberos-credentials-service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.kerberos.KerberosCredentialsService</identifiesControllerService>
+                            <name>kerberos-credentials-service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.principal</key>
+                        <value>
+                            <name>sasl.kerberos.principal</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.keytab</key>
+                        <value>
+                            <name>sasl.kerberos.keytab</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.username</key>
+                        <value>
+                            <dependencies>
+<dependentValues>PLAIN</dependentValues>
+<dependentValues>SCRAM-SHA-512</dependentValues>
+<dependentValues>SCRAM-SHA-256</dependentValues>
+<propertyName>sasl.mechanism</propertyName>
+                            </dependencies>
+                            <name>sasl.username</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.password</key>
+                        <value>
+                            <dependencies>
+<dependentValues>PLAIN</dependentValues>
+<dependentValues>SCRAM-SHA-512</dependentValues>
+<dependentValues>SCRAM-SHA-256</dependentValues>
+<propertyName>sasl.mechanism</propertyName>
+                            </dependencies>
+                            <name>sasl.password</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>sasl.token.auth</key>
+                        <value>
+                            <dependencies>
+<dependentValues>SCRAM-SHA-512</dependentValues>
+<dependentValues>SCRAM-SHA-256</dependentValues>
+<propertyName>sasl.mechanism</propertyName>
+                            </dependencies>
+                            <name>sasl.token.auth</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>ssl.context.service</key>
+                        <value>
+                            <identifiesControllerService>org.apache.nifi.ssl.SSLContextService</identifiesControllerService>
+                            <name>ssl.context.service</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>topic</key>
+                        <value>
+                            <name>topic</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>topic_type</key>
+                        <value>
+                            <name>topic_type</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>honor-transactions</key>
+                        <value>
+                            <name>honor-transactions</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>group.id</key>
+                        <value>
+                            <name>group.id</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>auto.offset.reset</key>
+                        <value>
+                            <name>auto.offset.reset</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>key-attribute-encoding</key>
+                        <value>
+                            <name>key-attribute-encoding</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>message-demarcator</key>
+                        <value>
+                            <name>message-demarcator</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>separate-by-key</key>
+                        <value>
+                            <name>separate-by-key</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>message-header-encoding</key>
+                        <value>
+                            <name>message-header-encoding</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>header-name-regex</key>
+                        <value>
+                            <name>header-name-regex</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>max.poll.records</key>
+                        <value>
+                            <name>max.poll.records</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>max-uncommit-offset-wait</key>
+                        <value>
+                            <name>max-uncommit-offset-wait</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Communications Timeout</key>
+                        <value>
+                            <name>Communications Timeout</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <maxBackoffPeriod>10 mins</maxBackoffPeriod>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>bootstrap.servers</key>
+                        <value>kafka:9092</value>
+                    </entry>
+                    <entry>
+                        <key>security.protocol</key>
+                        <value>PLAINTEXT</value>
+                    </entry>
+                    <entry>
+                        <key>sasl.mechanism</key>
+                        <value>GSSAPI</value>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.service.name</key>
+                    </entry>
+                    <entry>
+                        <key>kerberos-credentials-service</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.principal</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.kerberos.keytab</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.username</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.password</key>
+                    </entry>
+                    <entry>
+                        <key>sasl.token.auth</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>ssl.context.service</key>
+                    </entry>
+                    <entry>
+                        <key>topic</key>
+                        <value>raw-data</value>
+                    </entry>
+                    <entry>
+                        <key>topic_type</key>
+                        <value>names</value>
+                    </entry>
+                    <entry>
+                        <key>honor-transactions</key>
+                        <value>true</value>
+                    </entry>
+                    <entry>
+                        <key>group.id</key>
+                        <value>nifi-consumer-group</value>
+                    </entry>
+                    <entry>
+                        <key>auto.offset.reset</key>
+                        <value>latest</value>
+                    </entry>
+                    <entry>
+                        <key>key-attribute-encoding</key>
+                        <value>utf-8</value>
+                    </entry>
+                    <entry>
+                        <key>message-demarcator</key>
+                    </entry>
+                    <entry>
+                        <key>separate-by-key</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>message-header-encoding</key>
+                        <value>UTF-8</value>
+                    </entry>
+                    <entry>
+                        <key>header-name-regex</key>
+                    </entry>
+                    <entry>
+                        <key>max.poll.records</key>
+                        <value>10000</value>
+                    </entry>
+                    <entry>
+                        <key>max-uncommit-offset-wait</key>
+                        <value>1 secs</value>
+                    </entry>
+                    <entry>
+                        <key>Communications Timeout</key>
+                        <value>60 secs</value>
+                    </entry>
+                </properties>
+                <retryCount>10</retryCount>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>ConsumeKafka_2_0</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+                <retry>false</retry>
+            </relationships>
+            <state>RUNNING</state>
+            <style/>
+            <type>org.apache.nifi.processors.kafka.pubsub.ConsumeKafka_2_0</type>
+        </processors>
+    </snippet>
+    <timestamp>06/16/2025 18:40:42 UTC</timestamp>
+</template>

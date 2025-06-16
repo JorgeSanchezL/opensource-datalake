@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kafka-producer
+spec:
+  containers:
+    - name: kafka-producer
+      image: local/kafka-producer
+      imagePullPolicy: IfNotPresent
+      env:
+        - name: KAFKA_BROKER
+          value: "kafka:9092"
+  restartPolicy: Never

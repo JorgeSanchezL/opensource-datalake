@@ -1,0 +1,88 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nifi
+spec:
+  selector:
+    app: nifi
+  ports:
+    - name: http
+      port: 8080
+      targetPort: 8080
+      nodePort: 30002
+  type: NodePort
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nifi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nifi
+  template:
+    metadata:
+      labels:
+        app: nifi
+    spec:
+      initContainers:
+        - name: init-creds
+          image: alpine:3.20
+          command:
+            - sh
+            - -c
+            - |
+              mkdir -p /credentials && \
+              echo "[default]" > /credentials/credentials && \
+              echo "accessKey = $MINIO_ACCESS_KEY" >> /credentials/credentials && \
+              echo "secretKey = $MINIO_SECRET_KEY" >> /credentials/credentials
+          env:
+            - name: MINIO_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: minio-credentials
+                  key: MINIO_ACCESS_KEY
+            - name: MINIO_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: minio-credentials
+                  key: MINIO_SECRET_KEY
+          volumeMounts:
+            - name: credentials
+              mountPath: /credentials
+      containers:
+        - name: nifi
+          image: apache/nifi:1.19.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: NIFI_WEB_HTTP_PORT
+              value: "8080"
+          volumeMounts:
+            - name: template-volume
+              mountPath: /opt/nifi/templates/template.xml
+              subPath: template.xml
+            - name: credentials
+              mountPath: /opt/nifi/credentials
+        - name: nifi-configurator
+          image: alpine:3.20
+          command: ["/bin/sh"]
+          args: ["/scripts/init-nifi.sh"]
+          volumeMounts:
+            - name: template-volume
+              mountPath: /template.xml
+              subPath: template.xml
+            - name: scripts
+              mountPath: /scripts
+              readOnly: true
+      volumes:
+        - name: template-volume
+          configMap:
+            name: nifi-template
+        - name: scripts
+          configMap:
+            name: nifi-sidecar-scripts
+            defaultMode: 0755
+        - name: credentials
+          emptyDir: {}
