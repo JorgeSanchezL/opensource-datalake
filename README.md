@@ -33,4 +33,4 @@ kubectl create secret generic minio-credentials \
   --from-literal=MINIO_SECRET_KEY=minioadmin
 ```
 2. Despliega Kafka, Zookeeper, Nifi y MinIO ejecutando los manifiestos de cada carpeta.
-3. Inicia el producer con Python para alimentar Kafka con datos (recuerda ajustar los valores necesarios). Se recomienda utilizar el Dockerfile para crear una imagen y el manifiesto para desplegarla en el clúster Kubernetes.
+3. Inicia el producer con Python para alimentar Kafka con datos (recuerda ajustar los valores necesarios). El manifiesto para su despliegue está preparado para utilizar una imagen existente que ejecuta producer_local.py.
