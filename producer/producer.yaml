@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
     - name: kafka-producer
-      image: local/kafka-producer
+      image: jorgesanchezl/opensource-datalake-producer:latest
       imagePullPolicy: IfNotPresent
       env:
         - name: KAFKA_BROKER
