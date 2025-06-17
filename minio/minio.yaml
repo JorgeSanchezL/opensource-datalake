@@ -38,14 +38,14 @@ spec:
             - /data
             - --console-address
             - ":9001"
-            env:
-            - name: MINIO_ROOT_USER
-              valueFrom:
+          env:
+          - name: MINIO_ROOT_USER
+            valueFrom:
               secretKeyRef:
                 name: minio-credentials
                 key: MINIO_ACCESS_KEY
-            - name: MINIO_ROOT_PASSWORD
-              valueFrom:
+          - name: MINIO_ROOT_PASSWORD
+            valueFrom:
               secretKeyRef:
                 name: minio-credentials
                 key: MINIO_SECRET_KEY
@@ -69,14 +69,14 @@ spec:
           env:
             - name: MINIO_ROOT_USER
               valueFrom:
-              secretKeyRef:
-                name: minio-credentials
-                key: MINIO_ACCESS_KEY
+                secretKeyRef:
+                  name: minio-credentials
+                  key: MINIO_ACCESS_KEY
             - name: MINIO_ROOT_PASSWORD
               valueFrom:
-              secretKeyRef:
-                name: minio-credentials
-                key: MINIO_SECRET_KEY
+                secretKeyRef:
+                  name: minio-credentials
+                  key: MINIO_SECRET_KEY
       volumes:
         - name: data
           emptyDir: {}
